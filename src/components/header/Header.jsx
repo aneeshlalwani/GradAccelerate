@@ -1,11 +1,11 @@
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa6";
+import ApplyButton from "../apply-button/ApplyButton";
 
 const Header = () => {
   // UseState Hook To Toggle Mobile Navigation Menu
   const [isOpen, setIsOpen] = useState(false);
-  //
   return (
     <>
       <nav className="bg-[#662549] mx-auto sticky top-0 z-50 mb-3">
@@ -17,9 +17,11 @@ const Header = () => {
             </div>
             {/* GAP APPLY BUTTON */}
             <div className="hidden md:block">
-              <a className="bg-[#F39F5A] text-black text-xl font-bold rounded-full px-4 py-3 hover:cursor-pointer transition duration-300 ease-in-out transform hover:bg-[#D6894E] hover:scale-105">
-                Apply now 🚀
-              </a>
+              <ApplyButton
+                text="Apply now 🚀"
+                bgColor="bg-[#F39F5A]"
+                border={false}
+              />
             </div>
             {/* Hamburger Menu for Mobile */}
             <div className="md:hidden">
@@ -33,9 +35,11 @@ const Header = () => {
           {/* GAP Apply Button for Mobile */}
           {isOpen && (
             <div className="flex justify-center items-center bg-[#662549] p-2 rounded-md sm:hidden">
-              <a className="bg-[#F39F5A] text-black text-xl font-bold rounded-full px-6 py-3 hover:cursor-pointer transition duration-300 ease-in-out transform hover:bg-[#D6894E] hover:scale-105">
-                Apply now
-              </a>
+              <ApplyButton
+                text="Apply now"
+                bgColor="bg-[#F39F5A]"
+                border={false}
+              />
             </div>
           )}
         </div>

@@ -1,4 +1,5 @@
 import heroImg from "../../assets/hero.png";
+import ApplyButton from "../apply-button/ApplyButton";
 
 const Hero = () => {
   return (
@@ -42,9 +43,11 @@ const Hero = () => {
 
           {/* GAP Apply Button */}
           <div className="flex justify-center mt-8">
-            <a className="bg-[#F39F5A] text-black text-xl font-bold rounded-full px-6 py-3 hover:cursor-pointer transition duration-300 ease-in-out transform hover:bg-[#D6894E] hover:scale-105">
-              Apply now 🚀
-            </a>
+            <ApplyButton
+              text="Apply now 🚀"
+              bgColor="bg-[#F39F5A]"
+              border={false}
+            />
           </div>
         </div>
       </section>
