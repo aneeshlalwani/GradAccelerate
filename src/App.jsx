@@ -1,5 +1,6 @@
 import CallToAction from "./components/banners/CallToAction";
 import DiscountBanner from "./components/banners/DiscountBanner";
+import ScholarshipBanner from "./components/banners/ScholarshipBanner";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import LearningTracks from "./components/learning-tracks/LearningTracks";
@@ -12,6 +13,7 @@ function App() {
       <LearningTracks />
       <CallToAction />
       <DiscountBanner />
+      <ScholarshipBanner />
     </>
   );
 }
