@@ -1,6 +1,7 @@
 import CallToAction from "./components/banners/CallToAction";
 import DiscountBanner from "./components/banners/DiscountBanner";
 import ScholarshipBanner from "./components/banners/ScholarshipBanner";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Incentives from "./components/incentives/Incentives";
@@ -16,6 +17,7 @@ function App() {
       <CallToAction />
       <DiscountBanner />
       <ScholarshipBanner />
+      <Footer />
     </>
   );
 }
