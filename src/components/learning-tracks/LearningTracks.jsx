@@ -1,5 +1,5 @@
 // Importing Learning Tracks Data
-import { tracks } from "../../data/track";
+import { tracks } from "../../data/data";
 
 const LearningTracks = () => {
   return (
