@@ -11,6 +11,7 @@ import Incentives from "./components/incentives/Incentives";
 import LearningTracks from "./components/learning-tracks/LearningTracks";
 import LoaderForm from "./components/pre-loader/LoaderForm";
 import Preloader from "./components/pre-loader/Preloader";
+import Education from "./components/educational/Education";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -40,6 +41,7 @@ function App() {
           <LearningTracks />
           <CallToAction />
           <Benefits />
+          <Education />
           <DiscountBanner />
           <ScholarshipBanner />
           <Brands />
