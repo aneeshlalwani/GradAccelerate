@@ -1,69 +1,8 @@
 import Slider from "react-slick";
 import devkind from "../../assets/brands-logo/devkind.jpg";
-import burt from "../../assets/brands-logo/burt.png";
-import etikette from "../../assets/brands-logo/etikette.png";
-import eva from "../../assets/brands-logo/eva.png";
-import fairway from "../../assets/brands-logo/fairway.png";
-import fresh from "../../assets/brands-logo/fresh.png";
-import john from "../../assets/brands-logo/john.png";
-import ned from "../../assets/brands-logo/ned.png";
-import perfect from "../../assets/brands-logo/perfect.png";
-
-const brandLogos = [
-  {
-    title: burt,
-  },
-  {
-    title: etikette,
-  },
-  {
-    title: eva,
-  },
-  {
-    title: perfect,
-  },
-  {
-    title: ned,
-  },
-  {
-    title: john,
-  },
-  {
-    title: fresh,
-  },
-  {
-    title: fairway,
-  },
-];
+import { brandLogos, carouselSettings } from "../../data/data";
 
 const Brands = () => {
-  const settings = {
-    infinite: true,
-    speed: 800,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
-    slidesToShow: 5, // Default To Show 5 Logos at Once
-    responsive: [
-      {
-        // Medium Screens
-        breakpoint: 1024,
-        settings: {
-          // To Show 3 Logos
-          slidesToShow: 3,
-        },
-      },
-      {
-        // Small Screens
-        breakpoint: 600,
-        settings: {
-          // To Show 2 Logo
-          slidesToShow: 2,
-        },
-      },
-    ],
-  };
-
   return (
     <section className="my-14 bg-white">
       <div className="container mx-auto">
@@ -87,7 +26,7 @@ const Brands = () => {
 
         {/* Slider Section */}
         <div className="py-8 overflow-x-hidden">
-          <Slider {...settings}>
+          <Slider {...carouselSettings}>
             {brandLogos.map((logo, index) => (
               <div
                 key={index}

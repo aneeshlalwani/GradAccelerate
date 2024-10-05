@@ -1,3 +1,4 @@
+// Importing Learning Track Icons
 import learning from "../assets/track-icons/machine-learning.png";
 import business from "../assets/track-icons/business.png";
 import marketing from "../assets/track-icons/marketing.png";
@@ -6,6 +7,15 @@ import backend from "../assets/track-icons/backend.png";
 import ui from "../assets/track-icons/ui.png";
 import frontend from "../assets/track-icons/frontend.png";
 import web from "../assets/track-icons/web.png";
+// Importing Clients Brands Logos
+import burt from "../assets/brands-logo/burt.png";
+import etikette from "../assets/brands-logo/etikette.png";
+import eva from "../assets/brands-logo/eva.png";
+import fairway from "../assets/brands-logo/fairway.png";
+import fresh from "../assets/brands-logo/fresh.png";
+import john from "../assets/brands-logo/john.png";
+import ned from "../assets/brands-logo/ned.png";
+import perfect from "../assets/brands-logo/perfect.png";
 
 // Incentives Data
 export const incentivesData = [
@@ -98,4 +108,59 @@ export const tracks = [
       icon: learning,
     },
 ];
-  
+
+// Brands Component Logos of Clients
+export const brandLogos = [
+  {
+    title: burt,
+  },
+  {
+    title: etikette,
+  },
+  {
+    title: eva,
+  },
+  {
+    title: perfect,
+  },
+  {
+    title: ned,
+  },
+  {
+    title: john,
+  },
+  {
+    title: fresh,
+  },
+  {
+    title: fairway,
+  },
+];
+
+// React Slick Carousel Setting Being Used in Brands Component
+export const carouselSettings = {
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    slidesToShow: 5, // Default To Show 5 Logos at Once
+    responsive: [
+      {
+        // Medium Screens
+        breakpoint: 1024,
+        settings: {
+          // To Show 3 Logos
+          slidesToShow: 3,
+        },
+      },
+      {
+        // Small Screens
+        breakpoint: 600,
+        settings: {
+          // To Show 2 Logo
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
