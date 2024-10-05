@@ -24,7 +24,7 @@ function App() {
       setShowPreloader(false);
       // Display Main Components after the Preloader
       setShowContent(true);
-    }, 50000);
+    }, 5000);
   };
   return (
     <>
