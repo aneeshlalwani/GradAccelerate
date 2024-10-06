@@ -1,20 +1,36 @@
 import heroImg from "../../assets/hero.png";
 import ApplyButton from "../apply-button/ApplyButton";
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const Hero = () => {
+  // Created this hook to observe the element
+  const ref = useRef(null);
+
+  // using this hook from framer-motion library to check the if the element is in the view
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
     <>
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-8">
+      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-8 overflow-x-hidden">
         {/* Hero Image */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
           <img
             src={heroImg}
             alt="Hero"
             className="mx-auto w-[900px] h-[300px] object-cover rounded-3xl opacity-90 shadow-lg"
           />
-        </div>
+        </motion.div>
         {/* Tagline and Introduction to GAP */}
-        <div className="mt-6 text-center">
+        <motion.div
+          className="mt-6 text-center"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+        >
           <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-[#F39F5A] leading-tight">
             🚀 Transform Your Passion into Profession with Graduate Accelerate
             Program (GAP)!
@@ -32,24 +48,36 @@ const Hero = () => {
           </blockquote>
 
           {/* Promotional Text */}
-          <div className="mt-6">
+          <motion.div
+            ref={ref}
+            className="mt-6"
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+          >
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-red-600">
               GET 50% OFF FOR A LIMITED TIME
             </p>
             <p className="text-base md:text-lg lg:text-xl text-[#e5e0df] font-bold mt-2">
               Scholarships are available – apply now and unlock your potential!
             </p>
-          </div>
+          </motion.div>
 
           {/* GAP Apply Button */}
-          <div className="flex justify-center mt-8">
+          <motion.div
+            ref={ref}
+            className="flex justify-center mt-8"
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
             <ApplyButton
               text="Apply now 🚀"
               bgColor="bg-[#F39F5A]"
               border={false}
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
