@@ -1,4 +1,4 @@
-import team from "../../assets/team.jpg";
+import team from "../../assets/team.png";
 import { motion } from "framer-motion";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 const LearnFromTheBest = () => {
