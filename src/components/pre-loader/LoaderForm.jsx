@@ -25,7 +25,7 @@ const LoaderForm = ({ onSubmit }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5 }}
             >
-              <label className="text-5xl text-center mb-10 font-extrabold text-emerald-400">
+              <label className="text-5xl text-center mb-10 font-extrabold text-[#F39F5A]">
                 Hey there! 👋🏻 What&apos;s Your Good Name?
               </label>
               <input
@@ -37,7 +37,7 @@ const LoaderForm = ({ onSubmit }) => {
               />
               <button
                 type="submit"
-                className="bg-white text-xl text-black font-bold px-6 py-3 rounded-full hover:bg-emerald-700 hover:text-white transition-colors duration-300"
+                className="bg-white text-xl text-black font-bold px-6 py-3 rounded-full hover:bg-[#F39F5A] hover:text-[#1c1c1c] transition-colors duration-300"
               >
                 Submit
               </button>
