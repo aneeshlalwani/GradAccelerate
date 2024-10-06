@@ -2,48 +2,75 @@ import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa6";
 import ApplyButton from "../apply-button/ApplyButton";
-
+import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
   // UseState Hook To Toggle Mobile Navigation Menu
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="bg-[#662549] mx-auto sticky top-0 z-50 mb-3">
+      <motion.nav
+        className="mx-auto sticky backdrop-blur-sm top-0 z-50 mb-3"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
         <div className="container px-6 sm:px-8 lg:px-10">
           <div className="flex justify-between items-center pt-3 pb-2 sm:px-10">
             {/* GAP LOGO */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               <img src={logo} alt="logo" className="w-24 h-auto" />
-            </div>
+            </motion.div>
             {/* GAP APPLY BUTTON */}
-            <div className="hidden md:block">
-              <ApplyButton
-                text="Apply now 🚀"
-                bgColor="bg-[#F39F5A]"
-                border={false}
-              />
-            </div>
-            {/* Hamburger Menu for Mobile */}
-            <div className="md:hidden">
-              <FaBars
-                className="text-[#F39F5A] hover:cursor-pointer"
-                size={30}
-                onClick={() => setIsOpen(!isOpen)}
-              />
-            </div>
-          </div>
-          {/* GAP Apply Button for Mobile */}
-          {isOpen && (
-            <div className="flex justify-center items-center bg-[#662549] p-2 rounded-md sm:hidden">
+            <motion.div
+              className="hidden md:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               <ApplyButton
                 text="Apply now"
                 bgColor="bg-[#F39F5A]"
                 border={false}
               />
-            </div>
-          )}
+            </motion.div>
+            {/* Hamburger Menu for Mobile */}
+            <motion.div
+              className="md:hidden"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <FaBars
+                className="text-[#F39F5A] hover:cursor-pointer"
+                size={30}
+                onClick={() => setIsOpen(!isOpen)}
+              />
+            </motion.div>
+          </div>
+          {/* GAP Apply Button for Mobile */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                className="flex justify-center items-center bg-[#662549] p-2 rounded-md sm:hidden"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ApplyButton
+                  text="Apply now"
+                  bgColor="bg-[#F39F5A]"
+                  border={false}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 };
