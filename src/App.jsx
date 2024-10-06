@@ -16,6 +16,7 @@ import Criteria from "./components/educational/Criteria";
 import ApplicationProcess from "./components/application-process/ApplicationProcess";
 import Invitation from "./components/invitation/Invitation";
 import LearnFromTheBest from "./components/learn-from-best/LearnFromTheBest";
+import Accelerate from "./components/banners/Accelerate";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -51,6 +52,7 @@ function App() {
           <ApplicationProcess />
           <ScholarshipBanner />
           <Invitation />
+          <Accelerate />
           <LearnFromTheBest />
           <Brands />
           <Footer />

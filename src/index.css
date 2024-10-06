@@ -10,6 +10,7 @@ body{
     background: #210a28;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 /* SCROLL BAR STYLES */
 html::-webkit-scrollbar {
