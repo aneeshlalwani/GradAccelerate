@@ -16,6 +16,13 @@ import fresh from "../assets/brands-logo/fresh.png";
 import john from "../assets/brands-logo/john.png";
 import ned from "../assets/brands-logo/ned.png";
 import perfect from "../assets/brands-logo/perfect.png";
+// Importing Font Awesome Icons for Aplication Steps
+import {
+  faPaperPlane,
+  faClipboardCheck,
+  faUserTie,
+  faEnvelopeOpenText,
+} from "@fortawesome/free-solid-svg-icons"; 
 
 // Incentives Data
 export const incentivesData = [
@@ -163,4 +170,32 @@ export const carouselSettings = {
         },
       },
     ],
-  };
+};
+  
+// Application Process Steps Data
+export const applicationSteps = [
+  {
+    title: "Submit Application",
+    description:
+      "Submit your application form online. Be sure to include all the required documents and information.",
+    icon: faPaperPlane,
+  },
+  {
+    title: "Review & Evaluation",
+    description:
+      "Our expert team will thoroughly review your application based on your academic background, skills, and experience.",
+    icon: faClipboardCheck,
+  },
+  {
+    title: "Interview",
+    description:
+      "Selected candidates will be invited for an interview to assess their suitability for the program and discuss their aspirations.",
+    icon: faUserTie,
+  },
+  {
+    title: "Notification & Acceptance",
+    description:
+      "Following the interview process, successful applicants will receive an official notification of acceptance into the program.",
+    icon: faEnvelopeOpenText,
+  },
+];

@@ -13,6 +13,7 @@ import LoaderForm from "./components/pre-loader/LoaderForm";
 import Preloader from "./components/pre-loader/Preloader";
 import Education from "./components/educational/Education";
 import Criteria from "./components/educational/Criteria";
+import ApplicationProcess from "./components/application-process/ApplicationProcess";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -45,6 +46,7 @@ function App() {
           <Education />
           <DiscountBanner />
           <Criteria />
+          <ApplicationProcess />
           <ScholarshipBanner />
           <Brands />
           <Footer />
