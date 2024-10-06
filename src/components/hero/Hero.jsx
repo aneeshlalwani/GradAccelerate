@@ -1,13 +1,10 @@
 import heroImg from "../../assets/hero.png";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import ApplyButton from "../apply-button/ApplyButton";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 const Hero = () => {
   // Created this hook to observe the element
-  const ref = useRef(null);
-
-  // using this hook from framer-motion library to check the if the element is in the view
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const { ref, isInView } = useScrollAnimation({ once: true, amount: 0.1 });
 
   return (
     <>
