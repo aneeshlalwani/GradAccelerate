@@ -29,7 +29,7 @@ function App() {
       setShowPreloader(false);
       // Display Main Components after the Preloader
       setShowContent(true);
-    }, 5000);
+    }, 10000);
   };
   return (
     <>
