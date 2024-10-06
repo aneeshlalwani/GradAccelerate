@@ -151,9 +151,10 @@ export const brandLogos = [
 // React Slick Carousel Setting Being Used in Brands Component
 export const carouselSettings = {
     infinite: true,
-    speed: 800,
+    speed: 1800,
+    pauseOnHover: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 5, // Default To Show 5 Logos at Once
     responsive: [
