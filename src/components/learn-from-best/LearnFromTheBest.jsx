@@ -1,13 +1,22 @@
-import team from "../../assets/team.jpg"; // Import your image
-
+import team from "../../assets/team.jpg";
+import { motion } from "framer-motion";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 const LearnFromTheBest = () => {
+  const { ref, isInView } = useScrollAnimation({ once: false, amount: 0.1 });
+
   return (
     <>
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-16 bg-transparent text-white rounded-lg shadow-lg my-10">
+      <motion.section className="container mx-auto px-6 md:px-12 lg:px-20 py-16 bg-transparent text-white rounded-lg shadow-lg my-10 overflow-x-hidden">
         {/* Component Title */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8">
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut", delay: 0.3 }}
+          className="text-4xl sm:text-5xl font-bold text-center mb-8"
+        >
           Learn from Industry Leaders!{" "}
-        </h1>
+        </motion.h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Component Description*/}
           <div className="space-y-6">
@@ -36,7 +45,7 @@ const LearnFromTheBest = () => {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

@@ -3,8 +3,8 @@ import useScrollAnimation from "../../hooks/useScrollAnimation";
 import ApplyButton from "../apply-button/ApplyButton";
 import { motion } from "framer-motion";
 const Hero = () => {
-  // Created this hook to observe the element
-  const { ref, isInView } = useScrollAnimation({ once: true, amount: 0.1 });
+  // Importing this reusable hook from hooks
+  const { ref, isInView } = useScrollAnimation({ once: false, amount: 0.1 });
 
   return (
     <>

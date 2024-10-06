@@ -33,29 +33,29 @@ function App() {
   };
   return (
     <>
-      {/* {!showPreloader && !showContent && (
+      {!showPreloader && !showContent && (
         <LoaderForm onSubmit={handleFormSubmission} />
       )}
       {showPreloader && <Preloader username={username} />}
-      {showContent && ( */}
-      <div>
-        <Header />
-        <Hero />
-        <Incentives />
-        <LearningTracks />
-        <CallToAction />
-        <Benefits />
-        <Education />
-        <DiscountBanner />
-        <Criteria />
-        <ApplicationProcess />
-        <ScholarshipBanner />
-        <Invitation />
-        <LearnFromTheBest />
-        <Brands />
-        <Footer />
-      </div>
-      {/* )} */}
+      {showContent && (
+        <div>
+          <Header />
+          <Hero />
+          <Incentives />
+          <LearningTracks />
+          <CallToAction />
+          <Benefits />
+          <Education />
+          <DiscountBanner />
+          <Criteria />
+          <ApplicationProcess />
+          <ScholarshipBanner />
+          <Invitation />
+          <LearnFromTheBest />
+          <Brands />
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

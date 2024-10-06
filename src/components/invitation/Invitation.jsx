@@ -1,17 +1,34 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import invite from "../../assets/invite.jpg";
+import { motion } from "framer-motion";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 const Invitation = () => {
+  const { ref, isInView } = useScrollAnimation({ once: false, amount: 0.1 });
+
   return (
     <>
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10 bg-transparent rounded-lg shadow-lg">
+      <motion.section
+        ref={ref}
+        initial={{ opacity: 0, x: -100 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
+        className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10 bg-transparent rounded-lg shadow-lg"
+      >
         {/* Invitation Title */}
-        <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-10 capitalize text-center">
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, y: -100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
+          className="text-4xl sm:text-5xl font-semibold text-white mb-10 capitalize text-center"
+        >
           🥳 Invite Friends & Earn a Gift Card!{" "}
           <span>
             <FontAwesomeIcon icon={faGift} className="text-5xl mr-2" />
           </span>
-        </h1>
+        </motion.h1>
         {/* Invitation Description */}
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="text-white max-w-md mx-auto lg:mx-0 lg:mr-10 p-6 rounded-lg shadow-md bg-opacity-80 transition duration-300 hover:shadow-2xl">
@@ -42,7 +59,7 @@ const Invitation = () => {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
