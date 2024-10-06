@@ -15,6 +15,7 @@ import Education from "./components/educational/Education";
 import Criteria from "./components/educational/Criteria";
 import ApplicationProcess from "./components/application-process/ApplicationProcess";
 import Invitation from "./components/invitation/Invitation";
+import LearnFromTheBest from "./components/learn-from-best/LearnFromTheBest";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -50,6 +51,7 @@ function App() {
           <ApplicationProcess />
           <ScholarshipBanner />
           <Invitation />
+          <LearnFromTheBest />
           <Brands />
           <Footer />
         </div>
