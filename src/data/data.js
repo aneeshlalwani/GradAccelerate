@@ -16,6 +16,10 @@ import fresh from "../assets/brands-logo/fresh.png";
 import john from "../assets/brands-logo/john.png";
 import ned from "../assets/brands-logo/ned.png";
 import perfect from "../assets/brands-logo/perfect.png";
+// Importing Icons for Educational Data
+import discount from "../assets/discount.png";
+import fee from "../assets/fee.png";
+import scholarship from "../assets/scholarship.png";
 // Importing Font Awesome Icons for Aplication Steps
 import {
   faPaperPlane,
@@ -171,6 +175,47 @@ export const carouselSettings = {
       },
     ],
 };
+
+// Educational Data
+export const educationalOffers = [
+    {
+      icon: scholarship,
+      title: "Achieve Your Dreams with Fully Funded Scholarships",
+      description:
+        "Unlock Your Dream Career with Our Fully Funded Scholarships! We’re Committed to Empowering Students to Achieve Success.",
+    },
+    {
+      icon: discount,
+      title: "Early Birds Save Big — Enjoy 50% Off Today!",
+      description:
+        "Secure Your Spot Now and Enjoy 50% Off Program Fees! Register Early to Take Advantage of This Limited-Time Offer. Don’t Miss Out!",
+    },
+    {
+      icon: fee,
+      title: "Unlock Success at a Cost That Fits Your Budget",
+      description:
+        "Our program fee is 180,000 PKR, providing a comprehensive and high-value learning experience that sets you up for success.",
+    },
+  ];
+
+// Eligibility Criteria Data
+export const criteriaData = [
+    {
+      title: "Maintain Strong Academic Standing to Qualify",
+      description:
+        "Showcase Your Commitment to Learning with a Strong Academic Record. Minimum GPA Requirements May Apply!",
+    },
+    {
+      title: "Course Completion",
+      description:
+        "Finish Prerequisite Courses Related to the Program's Focus Area to Build a Strong Knowledge Foundation.",
+    },
+    {
+      title: "Your Interest and Motivation Matter!",
+      description:
+        "Show Genuine Interest and Passion for the Program's Field, Highlighting Your Proactive Mindset and Eagerness to Learn.",
+    },
+];
   
 // Application Process Steps Data
 export const applicationSteps = [

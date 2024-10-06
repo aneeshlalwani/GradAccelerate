@@ -1,21 +1,5 @@
+import { criteriaData } from "../../data/data";
 const Criteria = () => {
-  const criteriaData = [
-    {
-      title: "Maintain Strong Academic Standing to Qualify",
-      description:
-        "Showcase Your Commitment to Learning with a Strong Academic Record. Minimum GPA Requirements May Apply!",
-    },
-    {
-      title: "Course Completion",
-      description:
-        "Finish Prerequisite Courses Related to the Program's Focus Area to Build a Strong Knowledge Foundation.",
-    },
-    {
-      title: "Your Interest and Motivation Matter!",
-      description:
-        "Show Genuine Interest and Passion for the Program's Field, Highlighting Your Proactive Mindset and Eagerness to Learn.",
-    },
-  ];
   return (
     <>
       <section className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10">

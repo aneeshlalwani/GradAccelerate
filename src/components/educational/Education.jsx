@@ -1,27 +1,6 @@
-import discount from "../../assets/discount.png";
-import fee from "../../assets/fee.png";
-import scholarship from "../../assets/scholarship.png";
+import { educationalOffers } from "../../data/data";
+
 const Education = () => {
-  const educationalOffers = [
-    {
-      icon: scholarship,
-      title: "Achieve Your Dreams with Fully Funded Scholarships",
-      description:
-        "Unlock Your Dream Career with Our Fully Funded Scholarships! We’re Committed to Empowering Students to Achieve Success.",
-    },
-    {
-      icon: discount,
-      title: "Early Birds Save Big — Enjoy 50% Off Today!",
-      description:
-        "Secure Your Spot Now and Enjoy 50% Off Program Fees! Register Early to Take Advantage of This Limited-Time Offer. Don’t Miss Out!",
-    },
-    {
-      icon: fee,
-      title: "Unlock Success at a Cost That Fits Your Budget",
-      description:
-        "Our program fee is 180,000 PKR, providing a comprehensive and high-value learning experience that sets you up for success.",
-    },
-  ];
   return (
     <>
       <section className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10">
