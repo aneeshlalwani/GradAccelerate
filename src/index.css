@@ -5,6 +5,17 @@
 body{
     background: #210a28;
 }
- /* body{
-    background: #0c0c0c;
- } */
+/* SCROLL BAR STYLES */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #dcd2d2;
+    border-radius: 5rem;
+}
