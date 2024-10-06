@@ -14,6 +14,7 @@ import Preloader from "./components/pre-loader/Preloader";
 import Education from "./components/educational/Education";
 import Criteria from "./components/educational/Criteria";
 import ApplicationProcess from "./components/application-process/ApplicationProcess";
+import Invitation from "./components/invitation/Invitation";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -48,6 +49,7 @@ function App() {
           <Criteria />
           <ApplicationProcess />
           <ScholarshipBanner />
+          <Invitation />
           <Brands />
           <Footer />
         </div>
