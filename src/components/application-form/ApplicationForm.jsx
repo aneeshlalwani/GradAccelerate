@@ -20,9 +20,21 @@ const ApplicationForm = () => {
           <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
             Personal Information
           </h1>
-          <CustomTextField label="Full Name" />
-          <CustomTextField label="Phone" />
-          <CustomTextField label="Email" />
+          <CustomTextField
+            label="Full Name"
+            labelFor="full-name"
+            placeholder="Enter your Full Name"
+          />
+          <CustomTextField
+            label="Phone"
+            labelFor="phone"
+            placeholder="Enter your Phone No:"
+          />
+          <CustomTextField
+            label="Email"
+            labelFor="email"
+            placeholder="Enter your email"
+          />
         </div>
       </form>
 
