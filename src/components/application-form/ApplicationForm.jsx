@@ -17,7 +17,12 @@ const ApplicationForm = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
-
+  // Hook For Radio Buttons Selection
+  const [selectedSkill, setSelectedSkill] = useState("");
+  // Function To Track the Radio change
+  const handleRadioChange = (e) => {
+    setSelectedSkill(e.target.value);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,6 +40,7 @@ const ApplicationForm = () => {
           city: city,
           state: state,
           country: country,
+          selectedSkill: selectedSkill,
         },
       ],
     };
@@ -42,6 +48,18 @@ const ApplicationForm = () => {
     try {
       const response = await sendDataToGoogleSheet(data);
       console.log("Data sent successfully:", response.data);
+      setName("");
+      setBirthDay("");
+      setPhone("");
+      setEmail("");
+      setDegree("");
+      setInstitute("");
+      setYearOfGraduation("");
+      setCGPA("");
+      setCity("");
+      setState("");
+      setCountry("");
+      setSelectedSkill("");
     } catch (error) {
       console.error("Error sending data:", error);
     }
@@ -110,7 +128,7 @@ const ApplicationForm = () => {
           <CustomTextField
             type="text"
             label="Degree"
-            labelFor="email"
+            labelFor="degree"
             value={degree}
             onChange={(e) => setDegree(e.target.value)}
           />
@@ -163,8 +181,96 @@ const ApplicationForm = () => {
             onChange={(e) => setCountry(e.target.value)}
           />
         </div>
-        ;
-        <div className="text-center mt-6">
+        {/* Knowledge and Skill Section */}
+        <div className="p-4 border border-gray-300 rounded-lg">
+          <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
+            Knowledge and Skills
+          </h1>
+          <div className="flex flex-col space-y-2">
+            <label className="text-lg font-semibold text-gray-300">
+              Which area of IT are you most interested in?{" "}
+            </label>
+
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Full Stack Development"
+                checked={selectedSkill === "Full Stack Development"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Full Stack Development
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Backend Development"
+                checked={selectedSkill === "Backend Development"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Backend Development{" "}
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Frontend Development"
+                checked={selectedSkill === "Frontend Development"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Frontend Development
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Quality Assurance & Testing"
+                checked={selectedSkill === "Quality Assurance & Testing"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Quality Assurance & Testing
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Digital Marketing"
+                checked={selectedSkill === "Digital Marketing"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Digital Marketing
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Business Analytics"
+                checked={selectedSkill === "Business Analytics"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Business Analyst / Product Management
+            </label>
+            <label className="text-gray-300">
+              <input
+                type="radio"
+                name="selectedSkill"
+                value="Artificial Intelligence"
+                checked={selectedSkill === "Artificial Intelligence"}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              Artificial Intelligence / Machine Learning
+            </label>
+          </div>
+        </div>
+        <div className="text-center mt-6 mx-auto">
           <button
             type="submit"
             className="bg-[#F39F5A] text-white font-bold py-2 px-4 rounded hover:bg-[#e5e0df] transition duration-300"

@@ -1,8 +1,8 @@
 // eslint-disable-next-line react/prop-types
 const CustomTextField = ({ label, labelFor, placeholder, type, onChange }) => {
-  const min = type == "number" ? 0 : 0;
-  const max = type == "number" ? 5 : 0;
-  const stepAllowed = type == "number" ? "any" : "";
+  const min = type == "number" ? 0 : undefined;
+  const max = type == "number" ? 5 : undefined;
+  const stepAllowed = type == "number" ? "any" : undefined;
   return (
     <>
       <div className="flex flex-col space-y-2">
