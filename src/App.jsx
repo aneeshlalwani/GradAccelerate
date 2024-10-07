@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import CallToAction from "./components/banners/CallToAction";
 import DiscountBanner from "./components/banners/DiscountBanner";
 import ScholarshipBanner from "./components/banners/ScholarshipBanner";
@@ -17,6 +18,7 @@ import ApplicationProcess from "./components/application-process/ApplicationProc
 import Invitation from "./components/invitation/Invitation";
 import LearnFromTheBest from "./components/learn-from-best/LearnFromTheBest";
 import Accelerate from "./components/banners/Accelerate";
+import ApplicationForm from "./components/Application-form/ApplicationForm";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -33,32 +35,42 @@ function App() {
     }, 7000);
   };
   return (
-    <>
-      {!showPreloader && !showContent && (
-        <LoaderForm onSubmit={handleFormSubmission} />
-      )}
-      {showPreloader && <Preloader username={username} />}
-      {showContent && (
-        <div>
-          <Header />
-          <Hero />
-          <Incentives />
-          <LearningTracks />
-          <CallToAction />
-          <Benefits />
-          <Education />
-          <DiscountBanner />
-          <Criteria />
-          <ApplicationProcess />
-          <ScholarshipBanner />
-          <Invitation />
-          <Accelerate />
-          <LearnFromTheBest />
-          <Brands />
-          <Footer />
-        </div>
-      )}
-    </>
+    <Routes>
+      {/* This Route is for main landing pages */}
+      <Route
+        path="/"
+        element={
+          <>
+            {!showPreloader && !showContent && (
+              <LoaderForm onSubmit={handleFormSubmission} />
+            )}
+            {showPreloader && <Preloader username={username} />}
+            {showContent && (
+              <div>
+                <Header />
+                <Hero />
+                <Incentives />
+                <LearningTracks />
+                <CallToAction />
+                <Benefits />
+                <Education />
+                <DiscountBanner />
+                <Criteria />
+                <ApplicationProcess />
+                <ScholarshipBanner />
+                <Invitation />
+                <Accelerate />
+                <LearnFromTheBest />
+                <Brands />
+                <Footer />
+              </div>
+            )}
+          </>
+        }
+      />
+      {/* This Route is For Application Form */}
+      <Route path="/apply" element={<ApplicationForm />} />
+    </Routes>
   );
 }
 
