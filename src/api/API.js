@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const SHEET_API = "";
+const apiUrl = import.meta.env.VITE_API_URL;
+const apiKey = import.meta.env.VITE_API_KEY;
+const SHEET_API = `${apiUrl}/api/v1/${apiKey}`;
 
 export const sendDataToGoogleSheet = async (data) => {
     try {
