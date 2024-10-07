@@ -1,4 +1,6 @@
-<h1 align="center">Graduate Accelerate Program (GAP)</h1>
+<div align="center">
+<img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:2000/https://cdn.gamma.app/qh08wth9acd560e/f95b3ba6f16f43a7bd633b884c3c7c33/original/GAP-Logo.png" width="200px"/>
+   <h1>Graduate Accelerate Program (GAP)</h1></div>
 
 <p align="center">
 <a href="https://github.com/aneeshlalwani/GradAccelerate/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Elevate%20Your%20Future%20☀️;Unlock%20Your%20Potential%20💪🏻;GAP%20is%20Your%20Pathway%20to%20Success%20🛣️&center=true&width=500&height=40"></a>
