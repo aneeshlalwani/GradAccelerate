@@ -342,4 +342,28 @@ export const faq = [
       answer:
         "By referring a friend to join GAP, you get a chance to win a gift card when they apply and mention your name and email in their application form.",
     },
+];
+  
+// Testimonials Data
+export const testimonialData = [
+    {
+      review:
+        "GAP gave me the skills and confidence to land my dream job in tech!",
+      name: "Muhammad Muzamil",
+    },
+    {
+      review:
+        "GAP’s hands-on approach and diverse tracks transformed my career in just few weeks.",
+      name: "Ahmed Ali",
+    },
+    {
+      review:
+        "The support from GAP’s career team was outstanding. I secured a job immediately after graduating!",
+      name: "Anique",
+    },
+    {
+      review:
+        "Thanks to GAP, I’ve transitioned into digital marketing with a solid foundation and real-world skills.",
+      name: "Tony",
+    },
   ];

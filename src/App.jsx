@@ -21,6 +21,7 @@ import Accelerate from "./components/banners/Accelerate";
 import ApplicationForm from "./components/Application-form/ApplicationForm";
 import FaqsBanner from "./components/banners/FaqsBanner";
 import FAQ from "./components/faq/FAQ";
+import Testimonials from "./components/testimonial/Testimonials";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -63,6 +64,7 @@ function App() {
                 <Invitation />
                 <Accelerate />
                 <LearnFromTheBest />
+                <Testimonials />
                 <FaqsBanner />
                 <Brands />
                 <Footer />
