@@ -13,21 +13,21 @@ const Preloader = ({ username }) => {
   return (
     <>
       <motion.div
-        className="flex flex-col items-center justify-center min-h-screen bg-[#451952] text-white overflow-hidden"
+        className="flex flex-col items-center justify-center p-4 min-h-screen text-[#e5e0df] overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <motion.h1
-          className="text-4xl font-extrabold capitalize mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold capitalize mb-6"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          Yay, It&apos;s You, {username}...! 😅
+          Yay, There you are, {username}...! 😄
         </motion.h1>
         <motion.div
-          className="w-[80%] text-center"
+          className="w-full sm:w-[80%] text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.5 }}
@@ -40,7 +40,7 @@ const Preloader = ({ username }) => {
               1500,
             ]}
             speed={30}
-            className="text-4xl font-bold capitalize mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold capitalize mb-4"
           />
         </motion.div>
         <AnimatePresence>
@@ -63,7 +63,7 @@ const Preloader = ({ username }) => {
               }}
             >
               {" "}
-              🚗💨 Broom Broom!{" "}
+              🚗💨 Broom, Broom!{" "}
             </motion.h2>
           )}
         </AnimatePresence>
