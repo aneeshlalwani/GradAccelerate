@@ -245,3 +245,31 @@ export const applicationSteps = [
     icon: faEnvelopeOpenText,
   },
 ];
+
+// Benefits Data
+ export const benefits = [
+    {
+      id: 1,
+      title: "Personal Growth",
+      description:
+        "Challenge yourself to step outside your comfort zone and develop valuable life skills.",
+    },
+    {
+      id: 2,
+      title: "Enhanced Employability",
+      description:
+        "Acquire valuable skills and experiences that employers actively seek.",
+    },
+    {
+      id: 3,
+      title: "Cultural Enrichment",
+      description:
+        "Immerse yourself in different cultures to broaden your perspective and foster intercultural understanding.",
+    },
+    {
+      id: 4,
+      title: "Career Exploration",
+      description:
+        "Gain practical experience and explore potential career paths to make informed choices.",
+    },
+  ];
