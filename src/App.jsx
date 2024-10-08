@@ -19,6 +19,8 @@ import Invitation from "./components/invitation/Invitation";
 import LearnFromTheBest from "./components/learn-from-best/LearnFromTheBest";
 import Accelerate from "./components/banners/Accelerate";
 import ApplicationForm from "./components/Application-form/ApplicationForm";
+import FaqsBanner from "./components/banners/FaqsBanner";
+import FAQ from "./components/faq/FAQ";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -61,6 +63,7 @@ function App() {
                 <Invitation />
                 <Accelerate />
                 <LearnFromTheBest />
+                <FaqsBanner />
                 <Brands />
                 <Footer />
               </div>
@@ -70,6 +73,7 @@ function App() {
       />
       {/* This Route is For Application Form */}
       <Route path="/apply" element={<ApplicationForm />} />
+      <Route path="/faq" element={<FAQ />} />
     </Routes>
   );
 }

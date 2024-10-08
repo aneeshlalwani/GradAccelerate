@@ -272,4 +272,74 @@ export const applicationSteps = [
       description:
         "Gain practical experience and explore potential career paths to make informed choices.",
     },
+];
+  
+// FAQS Data
+export const faq = [
+    {
+      question: "What is the GradAccelerate Program?",
+      answer:
+        "GradAccelerate Program aka GAP is a intensive program designed to equip participants with tech skills, hands-on experience, and industry connections for a successful career",
+    },
+    {
+      question: "Who is the GAP for?",
+      answer:
+        "GAP is tailored for final-year students, recent graduates, and professionals seeking to pivot into tech. It’s perfect for anyone eager to launch or advance their career in the technology sector.",
+    },
+    {
+      question: "How long is the GAP program?",
+      answer:
+        "The GAP program spans 16 weeks, providing intensive training and hands-on learning in your chosen track.",
+    },
+    {
+      question: "Is this a physical or online program?",
+      answer:
+        "GAP is a fully online program, allowing you to participate from anywhere with flexibility and convenience.",
+    },
+    {
+      question: "What will I study in GAP?",
+      answer:
+        "You’ll gain in-depth knowledge and hands-on experience in your chosen track, whether it’s Full-stack Development, UX/UI Design, AI/ML, or more, preparing you for real-world tech challenges.",
+    },
+    {
+      question: "Who will teach us in GAP?",
+      answer:
+        "GAP is taught by seasoned industry professionals and expert instructors, bringing years of real-world experience to help you master the skills needed for a successful tech career.",
+    },
+    {
+      question: "What are the program timings?",
+      answer:
+        "The program runs five days a week, offering 25 to 35 hours of learning and hands-on projects each week, depending on your task completion. The flexible schedule allows you to adapt your workload based on progress, ensuring a balance between learning and practical applications.",
+    },
+    {
+      question: "How many students will be enrolled in one batch?",
+      answer:
+        "Each batch is limited to 6-12 students, ensuring personalized attention and support.",
+    },
+    {
+      question: "When does the next batch start?",
+      answer:
+        "The next GAP batch begins in 1 January 2025. Be sure to apply early to secure your spot! ",
+    },
+    {
+      question: "What qualifications are required to join GAP?",
+      answer:
+        "You need to have completed a minimum of 16 years of education, with a keen interest in technology and innovation.",
+    },
+
+    {
+      question: "Is there an interview process for admission?",
+      answer:
+        "Yes, shortlisted candidates will be invited for an interview to assess their skills, motivation, and suitability for the program.",
+    },
+    {
+      question: "Are scholarships available for GAP?",
+      answer:
+        "Yes, we offer fully funded scholarships and early bird discounts. Ask us! ",
+    },
+    {
+      question: "What benefits do I get if I refer a friend to GAP?",
+      answer:
+        "By referring a friend to join GAP, you get a chance to win a gift card when they apply and mention your name and email in their application form.",
+    },
   ];
