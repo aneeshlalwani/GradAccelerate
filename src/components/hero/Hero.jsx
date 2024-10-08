@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-8 overflow-x-hidden">
+      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-6 sm:py-8 lg:py-12 overflow-x-hidden">
         {/* Hero Image */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -18,17 +18,17 @@ const Hero = () => {
           <img
             src={heroImg}
             alt="Hero"
-            className="mx-auto w-[900px] h-[300px] object-cover rounded-3xl opacity-90 shadow-lg"
+            className="mx-auto w-full h-auto max-w-[900px] object-cover rounded-3xl opacity-90 shadow-lg"
           />
         </motion.div>
         {/* Tagline and Introduction to GAP */}
         <motion.div
-          className="mt-6 text-center"
+          className="mt-4 sm:mt-6 lg:mt-8 text-center"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
         >
-          <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-[#F39F5A] leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[#F39F5A]">
             🚀 Transform Your Passion into Profession with Graduate Accelerate
             Program (GAP)!
           </h1>

@@ -5,7 +5,7 @@ import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const LearningTracks = () => {
   const { ref, isInView } = useScrollAnimation({
-    triggerOnce: false,
+    // triggerOnce: true,
     threshold: 0.1,
   });
   return (
@@ -24,8 +24,8 @@ const LearningTracks = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {tracks.map((track, index) => (
             <motion.div
-              key={index}
               ref={ref}
+              key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
               transition={{

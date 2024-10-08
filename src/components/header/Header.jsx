@@ -12,9 +12,9 @@ const Header = () => {
         className="mx-auto sticky backdrop-blur-sm top-0 z-50 mb-3"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
       >
-        <div className="container px-6 sm:px-8 lg:px-10">
+        <div className="container px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center pt-3 pb-2 sm:px-10">
             {/* GAP LOGO */}
             <motion.div

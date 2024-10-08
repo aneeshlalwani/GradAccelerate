@@ -18,8 +18,16 @@ const Education = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           {educationalOffers.map((offer, index) => (
-            <div key={index} className="text-white">
-              <img src={offer.icon} alt={offer.title} className="w-20 mb-1" />
+            <div
+              key={offer.id}
+              className="text-[#e5e0df]"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <img
+                src={offer.icon}
+                alt={`${offer.title} icon`}
+                className="w-20 mb-1"
+              />
               <h1 className="text-xl font-bold mb-4">{offer.title}</h1>
               <p className="text-lg font-semibold">{offer.description}</p>
             </div>

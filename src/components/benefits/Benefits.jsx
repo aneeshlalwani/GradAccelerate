@@ -51,7 +51,7 @@ const Benefits = () => {
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
             className="space-y-8"
           >
-            {benefits.slice(0, 2).map((item) => (
+            {benefits.slice(0, 2).map((item, index) => (
               <motion.div
                 key={item.id}
                 ref={ref}
@@ -60,7 +60,7 @@ const Benefits = () => {
                 transition={{
                   duration: 1.2,
                   ease: "easeInOut",
-                  delay: item.id * 0.2,
+                  delay: 0.5 + index * 0.2,
                 }}
                 className="text-[#e5e0df] mb-16"
               >
@@ -86,8 +86,8 @@ const Benefits = () => {
           >
             <img
               src={boy}
-              alt="boy image in the center"
-              className="w-80 h-80 object-cover rounded-xl"
+              alt="students image in the center"
+              className="w-full max-w-[300px] h-auto object-cover rounded-xl"
             />
           </motion.div>
           {/* Right side descriptions */}
@@ -98,7 +98,7 @@ const Benefits = () => {
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
             className="space-y-8"
           >
-            {benefits.slice(2, 4).map((item) => (
+            {benefits.slice(2, 4).map((item, index) => (
               <motion.div
                 key={item.id}
                 ref={ref}
@@ -107,7 +107,7 @@ const Benefits = () => {
                 transition={{
                   duration: 1.2,
                   ease: "easeInOut",
-                  delay: item.id * 0.2,
+                  delay: 0.5 + index * 0.2,
                 }}
                 className="text-[#e5e0df] mb-16"
               >

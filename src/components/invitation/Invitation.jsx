@@ -13,7 +13,7 @@ const Invitation = () => {
         ref={ref}
         initial={{ opacity: 0, x: -100 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
         className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10 bg-transparent rounded-lg shadow-lg"
       >
         {/* Invitation Title */}
@@ -21,7 +21,7 @@ const Invitation = () => {
           ref={ref}
           initial={{ opacity: 0, y: -100 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
           className="text-4xl sm:text-5xl font-semibold text-white mb-10 capitalize text-center"
         >
           🥳 Invite Friends & Earn a Gift Card!{" "}
