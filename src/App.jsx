@@ -39,46 +39,48 @@ function App() {
     }, 7000);
   };
   return (
-    <Routes>
-      {/* This Route is for main landing pages */}
-      <Route
-        path="/"
-        element={
-          <>
-            {!showPreloader && !showContent && (
-              <LoaderForm onSubmit={handleFormSubmission} />
-            )}
-            {showPreloader && <Preloader username={username} />}
-            {showContent && (
-              <div>
-                <Header />
-                <Hero />
-                <Incentives />
-                <LearningTracks />
-                <CallToAction />
-                <Benefits />
-                <Education />
-                <DiscountBanner />
-                <Criteria />
-                <ApplicationProcess />
-                <ScholarshipBanner />
-                <Invitation />
-                <Accelerate />
-                <LearnFromTheBest />
-                <Testimonials />
-                <FaqsBanner />
-                <Brands />
-                <Footer />
-              </div>
-            )}
-          </>
-        }
-      />
-      {/* This Route is For Application Form */}
-      <Route path="/apply" element={<ApplicationForm />} />
-      <Route path="/faq" element={<FAQ />} />
-      <Route path="/broken-page" element={<Broken />} />
-    </Routes>
+    <>
+      <Routes>
+        {/* This Route is for main landing pages */}
+        <Route
+          path="/"
+          element={
+            <div>
+              {!showPreloader && !showContent && (
+                <LoaderForm onSubmit={handleFormSubmission} />
+              )}
+              {showPreloader && <Preloader username={username} />}
+              {showContent && (
+                <div>
+                  <Header />
+                  <Hero />
+                  <Incentives />
+                  <LearningTracks />
+                  <CallToAction />
+                  <Benefits />
+                  <Education />
+                  <DiscountBanner />
+                  <Criteria />
+                  <ApplicationProcess />
+                  <ScholarshipBanner />
+                  <Invitation />
+                  <Accelerate />
+                  <LearnFromTheBest />
+                  <Testimonials />
+                  <FaqsBanner />
+                  <Brands />
+                  <Footer />
+                </div>
+              )}
+            </div>
+          }
+        />
+        {/* This Route is For Application Form */}
+        <Route path="/apply" element={<ApplicationForm />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/broken-page" element={<Broken />} />
+      </Routes>
+    </>
   );
 }
 
