@@ -18,7 +18,7 @@ import ApplicationProcess from "./components/application-process/ApplicationProc
 import Invitation from "./components/invitation/Invitation";
 import LearnFromTheBest from "./components/learn-from-best/LearnFromTheBest";
 import Accelerate from "./components/banners/Accelerate";
-import ApplicationForm from "./components/Application-form/ApplicationForm";
+import ApplicationForm from "./components/application-form/ApplicationForm";
 import FaqsBanner from "./components/banners/FaqsBanner";
 import FAQ from "./components/faq/FAQ";
 import Testimonials from "./components/testimonial/Testimonials";
