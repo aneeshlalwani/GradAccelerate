@@ -7,7 +7,7 @@ const Incentives = () => {
   const { ref, isInView } = useScrollAnimation({ once: false, amount: 0.1 });
   return (
     <>
-      <section className="container px-6 md:px-10 lg:px-20 pt-20 pb-12 overflow-x-hidden">
+      <section className="container mx-auto px-6 md:px-12 lg:px-20 py-10 my-10">
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#e5e0df] mb-6"
           initial={{ opacity: 0, x: -100 }}
