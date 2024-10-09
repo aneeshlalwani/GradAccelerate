@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 import { tracks } from "../../data/data";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { ref, isInView } = useScrollAnimation({ once: false, amount: 0.1 });
@@ -36,7 +37,7 @@ const Footer = () => {
                   key={index}
                   className="mb-2 hover:underline underline-offset-8 hover:translate-x-4 transition-transform duration-300 ease-in-out"
                 >
-                  <a href="">{track.title}</a>
+                  <Link to="/broken-page">{track.title}</Link>
                 </li>
               ))}
             </ul>

@@ -22,6 +22,7 @@ import ApplicationForm from "./components/Application-form/ApplicationForm";
 import FaqsBanner from "./components/banners/FaqsBanner";
 import FAQ from "./components/faq/FAQ";
 import Testimonials from "./components/testimonial/Testimonials";
+import Broken from "./components/broken/Broken";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -76,6 +77,7 @@ function App() {
       {/* This Route is For Application Form */}
       <Route path="/apply" element={<ApplicationForm />} />
       <Route path="/faq" element={<FAQ />} />
+      <Route path="/broken-page" element={<Broken />} />
     </Routes>
   );
 }
