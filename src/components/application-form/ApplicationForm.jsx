@@ -270,10 +270,10 @@ const ApplicationForm = () => {
             </label>
           </div>
         </div>
-        <div className="text-center mt-6 mx-auto">
+        <div className="my-6 mx-auto">
           <button
             type="submit"
-            className="bg-[#F39F5A] text-white font-bold py-2 px-4 rounded hover:bg-[#e5e0df] transition duration-300"
+            className="bg-[#F39F5A] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#e5e0df] transition duration-300"
           >
             Submit
           </button>

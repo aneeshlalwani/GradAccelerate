@@ -1,6 +1,8 @@
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa6";
+import { RxCross1 } from "react-icons/rx";
+
 import ApplyButton from "../apply-button/ApplyButton";
 import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
@@ -44,11 +46,19 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
             >
-              <FaBars
-                className="text-[#F39F5A] hover:cursor-pointer"
-                size={30}
-                onClick={() => setIsOpen(!isOpen)}
-              />
+              {isOpen ? (
+                <RxCross1
+                  className="text-[#F39F5A] hover:cursor-pointer"
+                  size={30}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              ) : (
+                <FaBars
+                  className="text-[#F39F5A] hover:cursor-pointer"
+                  size={30}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              )}
             </motion.div>
           </div>
           {/* GAP Apply Button for Mobile */}
