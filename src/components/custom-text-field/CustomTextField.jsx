@@ -1,5 +1,7 @@
+import { Field, ErrorMessage } from "formik";
+
 // eslint-disable-next-line react/prop-types
-const CustomTextField = ({ label, labelFor, placeholder, type, onChange }) => {
+const CustomTextField = ({ label, labelFor, placeholder, type, name }) => {
   const min = type == "number" ? 0 : undefined;
   const max = type == "number" ? 5 : undefined;
   const stepAllowed = type == "number" ? "any" : undefined;
@@ -12,16 +14,22 @@ const CustomTextField = ({ label, labelFor, placeholder, type, onChange }) => {
         >
           {label}
         </label>
-        <input
+        <Field
           type={type}
+          name={name}
           id={labelFor}
-          className="w-full p-3 rounded-lg bg-gray-800 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent placeholder-gray-500"
           placeholder={placeholder}
-          onChange={onChange}
+          // onChange={onChange}
           min={min}
           max={max}
           step={stepAllowed}
+          className="w-full p-3 rounded-lg bg-gray-800 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent placeholder-gray-500"
           required
+        />
+        <ErrorMessage
+          name={name}
+          component="div"
+          className="text-red-500 mt-2"
         />
       </div>
     </>

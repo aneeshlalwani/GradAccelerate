@@ -1,65 +1,32 @@
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 import { sendDataToGoogleSheet } from "../../api/API";
 import CustomTextField from "../custom-text-field/CustomTextField";
-import { useState } from "react";
 
+// Validation Schema Using Yup for Form Validation
+const ApplicationSchema = Yup.object().shape({
+  name: Yup.string().required("Full Name is required"),
+  birthday: Yup.date().required("Birth Date is required"),
+  phone: Yup.string().required("Phone number is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  degree: Yup.string().required("Degree is required"),
+  institute: Yup.string().required("Institute is required"),
+  yearOfGraduation: Yup.string().required("Year of Graduation is required"),
+  cgpa: Yup.number().required("CGPA is required"),
+  city: Yup.string().required("City is required"),
+  state: Yup.string().required("State is required"),
+  country: Yup.string().required("Country is required"),
+  selectedSkill: Yup.string().required("Please select a skill"),
+});
 const ApplicationForm = () => {
-  // Hook For Personal Information
-  const [name, setName] = useState("");
-  const [birthday, setBirthDay] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  // Hook For Academic Information
-  const [degree, setDegree] = useState("");
-  const [institute, setInstitute] = useState("");
-  const [yearOfGraduation, setYearOfGraduation] = useState("");
-  const [cgpa, setCGPA] = useState("");
-  // Hook For Location Information
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  // Hook For Radio Buttons Selection
-  const [selectedSkill, setSelectedSkill] = useState("");
-  // Function To Track the Radio change
-  const handleRadioChange = (e) => {
-    setSelectedSkill(e.target.value);
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (values, { resetForm }) => {
     const data = {
-      data: [
-        {
-          name: name,
-          birthday: birthday,
-          phone: phone,
-          email: email,
-          degree: degree,
-          institute: institute,
-          yearOfGraduation: yearOfGraduation,
-          cgpa: cgpa,
-          city: city,
-          state: state,
-          country: country,
-          selectedSkill: selectedSkill,
-        },
-      ],
+      data: [values],
     };
-
     try {
       const response = await sendDataToGoogleSheet(data);
       console.log("Data sent successfully:", response.data);
-      setName("");
-      setBirthDay("");
-      setPhone("");
-      setEmail("");
-      setDegree("");
-      setInstitute("");
-      setYearOfGraduation("");
-      setCGPA("");
-      setCity("");
-      setState("");
-      setCountry("");
-      setSelectedSkill("");
+      resetForm();
     } catch (error) {
       console.error("Error sending data:", error);
     }
@@ -77,10 +44,23 @@ const ApplicationForm = () => {
           Fill out the form ASAP!
         </h3>
       </div>
-      <form
-        action=""
+      <Formik
+        initialValues={{
+          name: "",
+          birthday: "",
+          phone: "",
+          email: "",
+          degree: "",
+          institute: "",
+          yearOfGraduation: "",
+          cgpa: "",
+          city: "",
+          state: "",
+          country: "",
+          selectedSkill: "",
+        }}
+        validationSchema={ApplicationSchema}
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
         {/* Personal Information Section */}
         <div className="p-4 border border-gray-300 rounded-lg">
@@ -270,10 +250,10 @@ const ApplicationForm = () => {
             </label>
           </div>
         </div>
-        <div className="my-6 mx-auto">
+        <div className="text-center mt-6 mx-auto">
           <button
             type="submit"
-            className="bg-[#F39F5A] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#e5e0df] transition duration-300"
+            className="bg-[#F39F5A] text-white font-bold py-2 px-4 rounded hover:bg-[#e5e0df] transition duration-300"
           >
             Submit
           </button>
