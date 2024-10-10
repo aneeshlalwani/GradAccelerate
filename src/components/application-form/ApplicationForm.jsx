@@ -1,65 +1,32 @@
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 import { sendDataToGoogleSheet } from "../../api/API";
 import CustomTextField from "../custom-text-field/CustomTextField";
-import { useState } from "react";
 
+// Validation Schema Using Yup for Form Validation
+const ApplicationSchema = Yup.object().shape({
+  name: Yup.string().required("Full Name is required"),
+  birthday: Yup.date().required("Birth Date is required"),
+  phone: Yup.string().required("Phone number is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  degree: Yup.string().required("Degree is required"),
+  institute: Yup.string().required("Institute is required"),
+  yearOfGraduation: Yup.string().required("Year of Graduation is required"),
+  cgpa: Yup.number().required("CGPA is required"),
+  city: Yup.string().required("City is required"),
+  state: Yup.string().required("State is required"),
+  country: Yup.string().required("Country is required"),
+  selectedSkill: Yup.string().required("Please select a skill"),
+});
 const ApplicationForm = () => {
-  // Hook For Personal Information
-  const [name, setName] = useState("");
-  const [birthday, setBirthDay] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  // Hook For Academic Information
-  const [degree, setDegree] = useState("");
-  const [institute, setInstitute] = useState("");
-  const [yearOfGraduation, setYearOfGraduation] = useState("");
-  const [cgpa, setCGPA] = useState("");
-  // Hook For Location Information
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  // Hook For Radio Buttons Selection
-  const [selectedSkill, setSelectedSkill] = useState("");
-  // Function To Track the Radio change
-  const handleRadioChange = (e) => {
-    setSelectedSkill(e.target.value);
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (values, { resetForm }) => {
     const data = {
-      data: [
-        {
-          name: name,
-          birthday: birthday,
-          phone: phone,
-          email: email,
-          degree: degree,
-          institute: institute,
-          yearOfGraduation: yearOfGraduation,
-          cgpa: cgpa,
-          city: city,
-          state: state,
-          country: country,
-          selectedSkill: selectedSkill,
-        },
-      ],
+      data: [values],
     };
-
     try {
       const response = await sendDataToGoogleSheet(data);
       console.log("Data sent successfully:", response.data);
-      setName("");
-      setBirthDay("");
-      setPhone("");
-      setEmail("");
-      setDegree("");
-      setInstitute("");
-      setYearOfGraduation("");
-      setCGPA("");
-      setCity("");
-      setState("");
-      setCountry("");
-      setSelectedSkill("");
+      resetForm();
     } catch (error) {
       console.error("Error sending data:", error);
     }
@@ -77,208 +44,205 @@ const ApplicationForm = () => {
           Fill out the form ASAP!
         </h3>
       </div>
-      <form
-        action=""
+      <Formik
+        initialValues={{
+          name: "",
+          birthday: "",
+          phone: "",
+          email: "",
+          degree: "",
+          institute: "",
+          yearOfGraduation: "",
+          cgpa: "",
+          city: "",
+          state: "",
+          country: "",
+          selectedSkill: "",
+        }}
+        validationSchema={ApplicationSchema}
         onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        {/* Personal Information Section */}
-        <div className="p-4 border border-gray-300 rounded-lg">
-          <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
-            Personal Information
-          </h1>
-          <CustomTextField
-            label="Full Name"
-            type="text"
-            labelFor="full-name"
-            placeholder="Enter your Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <CustomTextField
-            label="Birth Date"
-            type="date"
-            labelFor="birthday"
-            placeholder="Select your Birth date"
-            value={birthday}
-            onChange={(e) => setBirthDay(e.target.value)}
-          />
-          <CustomTextField
-            type="text"
-            label="Phone"
-            labelFor="phone"
-            placeholder="Enter your Phone No:"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <CustomTextField
-            type="email"
-            label="Email"
-            labelFor="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        {/* Academic Information Section */}
-        <div className="p-4 border border-gray-300 rounded-lg">
-          <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
-            Academic Information
-          </h1>
-          <CustomTextField
-            type="text"
-            label="Degree"
-            labelFor="degree"
-            value={degree}
-            onChange={(e) => setDegree(e.target.value)}
-          />
-          <CustomTextField
-            type="text"
-            label="Institution"
-            labelFor="institution"
-            value={institute}
-            onChange={(e) => setInstitute(e.target.value)}
-          />
-          <CustomTextField
-            type="date"
-            label="Year of Graduation"
-            labelFor="year-of-graduation"
-            value={yearOfGraduation}
-            onChange={(e) => setYearOfGraduation(e.target.value)}
-          />
-          <CustomTextField
-            type="number"
-            label="CGPA"
-            labelFor="cgpa"
-            value={cgpa}
-            onChange={(e) => setCGPA(e.target.value)}
-          />
-        </div>
-        {/* Location Section */}
-        <div className="p-4 border border-gray-300 rounded-lg">
-          <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
-            Location
-          </h1>
-          <CustomTextField
-            type="text"
-            label="City"
-            labelFor="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <CustomTextField
-            type="text"
-            label="State/Province/Region"
-            labelFor="state"
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-          />
-          <CustomTextField
-            type="text"
-            label="Country"
-            labelFor="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          />
-        </div>
-        {/* Knowledge and Skill Section */}
-        <div className="p-4 border border-gray-300 rounded-lg">
-          <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
-            Knowledge and Skills
-          </h1>
-          <div className="flex flex-col space-y-2">
-            <label className="text-lg font-semibold text-gray-300">
-              Which area of IT are you most interested in?{" "}
-            </label>
-
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Full Stack Development"
-                checked={selectedSkill === "Full Stack Development"}
-                onChange={handleRadioChange}
-                className="mr-2"
+        {({ isSubmitting }) => (
+          <Form action="" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* {console.log(values)} */}
+            {/* Personal Information Section */}
+            <div className="p-4 border border-gray-300 rounded-lg">
+              <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
+                Personal Information
+              </h1>
+              <CustomTextField
+                label="Full Name"
+                labelFor="full-name"
+                placeholder="Enter your Full Name"
+                type="text"
+                name="name"
               />
-              Full Stack Development
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Backend Development"
-                checked={selectedSkill === "Backend Development"}
-                onChange={handleRadioChange}
-                className="mr-2"
+              <CustomTextField
+                label="Birth Date"
+                labelFor="birthday"
+                placeholder="Select your Birth date"
+                type="date"
+                name="birthday"
               />
-              Backend Development{" "}
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Frontend Development"
-                checked={selectedSkill === "Frontend Development"}
-                onChange={handleRadioChange}
-                className="mr-2"
+              <CustomTextField
+                label="Phone"
+                labelFor="phone"
+                placeholder="Enter your Phone No:"
+                type="text"
+                name="phone"
               />
-              Frontend Development
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Quality Assurance & Testing"
-                checked={selectedSkill === "Quality Assurance & Testing"}
-                onChange={handleRadioChange}
-                className="mr-2"
+              <CustomTextField
+                label="Email"
+                labelFor="email"
+                placeholder="Enter your email"
+                type="email"
+                name="email"
               />
-              Quality Assurance & Testing
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Digital Marketing"
-                checked={selectedSkill === "Digital Marketing"}
-                onChange={handleRadioChange}
-                className="mr-2"
+            </div>
+            {/* Academic Information Section */}
+            <div className="p-4 border border-gray-300 rounded-lg">
+              <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
+                Academic Information
+              </h1>
+              <CustomTextField
+                label="Degree"
+                labelFor="degree"
+                placeholder="Enter Degree"
+                type="text"
+                name="degree"
               />
-              Digital Marketing
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Business Analytics"
-                checked={selectedSkill === "Business Analytics"}
-                onChange={handleRadioChange}
-                className="mr-2"
+              <CustomTextField
+                label="Institution"
+                labelFor="institution"
+                placeholder="Enter Institute"
+                type="text"
+                name="institute"
               />
-              Business Analyst / Product Management
-            </label>
-            <label className="text-gray-300">
-              <input
-                type="radio"
-                name="selectedSkill"
-                value="Artificial Intelligence"
-                checked={selectedSkill === "Artificial Intelligence"}
-                onChange={handleRadioChange}
-                className="mr-2"
+              <CustomTextField
+                label="Year of Graduation"
+                labelFor="year-of-graduation"
+                placeholder="Select Graduation Date"
+                type="date"
+                name="yearOfGraduation"
               />
-              Artificial Intelligence / Machine Learning
-            </label>
-          </div>
-        </div>
-        <div className="text-center mt-6 mx-auto">
-          <button
-            type="submit"
-            className="bg-[#F39F5A] text-white font-bold py-2 px-4 rounded hover:bg-[#e5e0df] transition duration-300"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+              <CustomTextField
+                label="CGPA"
+                labelFor="cgpa"
+                placeholder="Enter your CGPA/GPA"
+                type="number"
+                name="cgpa"
+              />
+            </div>
+            {/* Location Section */}
+            <div className="p-4 border border-gray-300 rounded-lg">
+              <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
+                Location
+              </h1>
+              <CustomTextField
+                label="City"
+                labelFor="city"
+                placeholder="Enter City"
+                type="text"
+                name="city"
+              />
+              <CustomTextField
+                label="State/Province/Region"
+                labelFor="state"
+                placeholder="Enter State"
+                type="text"
+                name="state"
+              />
+              <CustomTextField
+                label="Country"
+                labelFor="country"
+                placeholder="Enter Country"
+                type="text"
+                name="country"
+              />
+            </div>
+            {/* Knowledge and Skill Section */}
+            <div className="p-4 border border-gray-300 rounded-lg">
+              <h1 className="text-3xl font-semibold text-[#F39F5A] mb-4">
+                Knowledge and Skills
+              </h1>
+              <div className="flex flex-col space-y-2 text-[#e5e0df]">
+                <label className="text-lg font-semibold text-gray-300">
+                  Which area of IT are you most interested in?{" "}
+                </label>
+                <div>
+                  <Field
+                    value="Full Stack Development"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">Full Stack Development</label>
+                </div>
+                <div>
+                  <Field
+                    value="Backend Development"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">Backend Development</label>
+                </div>
+                <div>
+                  <Field
+                    value="Frontend Development"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">Frontend Development</label>
+                </div>
+                <div>
+                  <Field
+                    value="Quality Assurance & Testing"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">Quality Assurance & Testing</label>
+                </div>
+                <div>
+                  <Field
+                    value="Digital Marketing"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">Digital Marketing</label>
+                </div>
+                <div>
+                  <Field
+                    value="Business Analytics"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">
+                    Business Analyst / Product Management
+                  </label>
+                </div>
+                <div>
+                  <Field
+                    value="Artificial Intelligence"
+                    type="radio"
+                    name="selectedSkill"
+                  />
+                  <label className="ml-2">
+                    Artificial Intelligence / Machine Learning
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-6 mx-auto">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-[#F39F5A] text-white font-bold py-2 px-4 rounded hover:bg-[#e5e0df] transition duration-300"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </section>
   );
 };
