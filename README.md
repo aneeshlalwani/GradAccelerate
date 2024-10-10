@@ -31,7 +31,14 @@ The marketing strategy for the GAP landing page revolves around creating an emot
 - Framer Motion :  A library for easily creating fluid and interactive animations in React.
 - Axios :  A promise-based HTTP client for making API requests in JavaScript.
 - SheetDB.io : A service that connects Google Sheets to your application, turning your sheet into a RESTful API.
-- Google SpreadSheet : A cloud-based spreadsheet for storing, managing, and collaborating on data in real-time.
+- Google SpreadSheet : A cloud-based spreadsheet for storing, managing, and collaborating on data in real-time.<br /><br />
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&labelColor=black&logo=vite&logoColor=646CFF)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&labelColor=black&logo=tailwind-css&logoColor=38B2AC)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&labelColor=black&logo=framer&logoColor=0055FF)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&labelColor=black&logo=axios&logoColor=5A29E4)
+![SheetDB](https://img.shields.io/badge/SheetDB.io-ffca28?style=for-the-badge&labelColor=black&logoColor=ffca28)
+![Google Spreadsheet](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&labelColor=black&logo=google-sheets&logoColor=34A853)
 
 ## Getting Started
 Follow these steps to set up the Graduate Accelerate Program (GAP) project on your local machine:
